@@ -1,5 +1,4 @@
 import asyncio
-from email import message
 import socket
 from pywebio.input import *
 from pywebio.output import *
@@ -127,5 +126,5 @@ async def refresh_msgbox(_user: user):
 
 
 if __name__ == '__main__':
-    start_server(main, port=80, debug=True, cdn=False, reconnect_timeout=1, auto_open_webbrowser=True)
+    start_server(main, port=8080, debug=True)
 
