@@ -68,7 +68,6 @@ async def main():
                 actions(name='btns', buttons=['Отправить', 'Многострочный ввод', {'label': 'Выйти из чата', 'type': 'cancel'}])
             ], validate=lambda m: ('msg', 'Поле сообщения не может быть пустым!') if m['btns'] == 'Отправить' and m['msg'] == '' else None)
             if data is None:
-                print(f'{_user.username} is disconnected!')
                 break
             if data['btns'] == 'Многострочный ввод':
                 data = await input_group('Введите сообщение', inputs=[textarea(name='msg', placeholder='Введите текст...'),
