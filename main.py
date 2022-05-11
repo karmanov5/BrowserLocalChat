@@ -126,5 +126,5 @@ async def refresh_msgbox(_user: user):
 
 
 if __name__ == '__main__':
-    start_server(main, port=8080, debug=True)
+    start_server(main, port=8128, debug=True)
 
