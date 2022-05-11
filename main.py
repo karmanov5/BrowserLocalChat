@@ -8,11 +8,12 @@ from user import user
 
 clients = set()
 messages = []
+count = 0
 
 
 @config(theme='dark')
 async def main():
-    global clients, messages
+    global clients, messages, count
 
     set_env(title='Локальный чат на Python', output_animation=False, input_auto_focus=False)
 
@@ -37,7 +38,8 @@ async def main():
     username = socket.getfqdn(ip)
     if username in [cl.username for cl in clients]:
         username += '_1'
-    _user = user(len(clients), ip, username)
+    _user = user(count, ip, username)
+    count += 1
     
     clients.add(_user)
 
